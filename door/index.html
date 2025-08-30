@@ -7,12 +7,36 @@
     body {
       margin: 0;
       height: 100vh;
-      background: url("images/door.png") no-repeat center center fixed;
-      background-size: cover;
       font-family: Cambria, serif;
       color: white;
       text-align: center;
       overflow: hidden;
+      position: relative;
+    }
+
+    /* 添加暗色遮罩层 */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6); /* 调整这个值控制暗度 */
+      z-index: -2;
+    }
+
+    /* 原始背景图像 */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("images/door.png") no-repeat center center fixed;
+      background-size: cover;
+      z-index: -3;
     }
 
     h1 {
